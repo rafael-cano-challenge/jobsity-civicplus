@@ -1,0 +1,38 @@
+services:
+  node-workspace:
+    build:
+      context: ./docker-contexts/node
+      dockerfile: dev.dockerfile
+      target: dev
+      additional_contexts:
+        root: ./
+      args:
+        - VITE_APP_ENV=local
+    image: front-civic-plus:node
+    env_file:
+      - .env.${VITE_APP_ENV}
+    ports:
+      - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
+    command: /var/www/workspace/entrypoint.sh
+    volumes:
+      - .:/var/www/workspace:delegated
+    networks:
+      - api-network
+
+  nginx:
+    build:
+      context: ./docker-contexts/nginx
+      dockerfile: dev.dockerfile
+    image: front-civic-plus:nginx
+    ports:
+      - ${FRONT_PORT:-80}:80
+    volumes:
+      - .:/var/www/workspace:ro
+    networks:
+      - api-network
+    depends_on:
+      - node-workspace
+
+networks:
+  api-network:
+    driver: bridge

@@ -1,0 +1,122 @@
+@import "./base.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap'); */
+
+#app {
+  margin: auto auto;
+  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  /* Medium */
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main-app {
+  /* background-color: #DBC7AC; */
+  background-color: var(--background-app);
+  transition: background-color 0.3s ease;
+}
+
+.background-app-dark {
+  --background-app: black;
+  --background-popup-nav-bar: black;
+  --color-option-link-popup: #F6EEEA;
+  --color-sub-option-link-popup: #F6EEEA;
+  --section-background: #B2B2B2;
+  --hover-background-option-popup: #DBC7AC;
+}
+
+.background-app-light {
+  --background-app: #DBC7AC;
+  --background-popup-nav-bar: #F6EEEA;
+  --color-option-link-popup: black;
+  --color-sub-option-link-popup: black;
+  --section-background: #DBC7AC;
+  --hover-background-option-popup: #B2B2B2;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+}
+
+.bg-identity {
+  background-color: #dbc7ace5;
+}
+
+.bg-identity-2 {
+  background-color: #F6EEEA;
+}
+
+.bg-identity-dark {
+  background-color: #262423;
+}
+
+.text-identity {
+  color: #F6EEEA;
+}
+
+.text-identity-dark {
+  color: #262423;
+}
+
+.text-identity-gold {
+  color: #DBC7AC;
+}
+
+.text-identity-gold-dark {
+  --tw-text-opacity: 1;
+  color: rgb(151 135 120 / var(--tw-text-opacity))
+}
+
+.border-color-identity {
+  border: 0.5px solid #F6EEEA;
+}
+
+.border-color-identity-dark {
+  border: 0.5px solid black;
+}
+
+.border-color-identity-dark-gold {
+  border: 0.5px solid #978778;
+}
+
+.border-color-identity-dark-gold-thick {
+  border: 2px solid #978778;
+}
+
+.border-color-indigo {
+  border: 0.5px solid rgb(79 70 229);
+}
+
+.border-sides-light {
+  border-left: 0.5px solid #F6EEEA;
+  border-right: 0.5px solid #F6EEEA;
+}
+
+.border-sides-dark {
+  border-left: 0.5px solid black;
+  border-right: 0.5px solid black;
+}

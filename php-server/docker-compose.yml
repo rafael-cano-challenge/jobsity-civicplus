@@ -1,0 +1,37 @@
+services:
+  civic-plus-workspace:
+    build:
+      context: ./docker-contexts/php
+      dockerfile: dev.dockerfile
+      additional_contexts:
+        root: ./
+      args:
+        - APP_ENV=local
+    image: civic-plus-v1:workspace
+    env_file:
+      - .env.${APP_ENV}
+    environment:
+      - APP_NAME=Civic-Plus-App
+    command: /var/www/workspace/entrypoint.sh
+    volumes:
+      - .:/var/www/workspace:delegated
+    networks:
+      - api-network
+
+  nginx:
+    build:
+      context: ./docker-contexts/nginx
+      dockerfile: dev.dockerfile
+    image: civic-plus:nginx
+    ports:
+      - ${APP_PORT:-80}:80
+    volumes:
+      - .:/var/www/workspace:ro
+    networks:
+      - api-network
+    depends_on:
+      - civic-plus-workspace
+
+networks:
+  api-network:
+    driver: bridge

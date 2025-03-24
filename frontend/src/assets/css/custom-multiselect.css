@@ -1,0 +1,39 @@
+@import 'vue-multiselect/dist/vue-multiselect.css';
+
+
+/* Cambia el color de fondo de las etiquetas */
+.multiselect__tag {
+    background: #4f46e5; /* Color personalizado */
+}
+.multiselect__tag-icon::after {
+    color: white;
+}
+  
+  /* Cambia el color de fondo de las opciones seleccionadas */
+.multiselect__option--selected {
+    background: #4f46e5; /* Color personalizado */
+    color: white;
+}
+  
+  /* Cambia el color de fondo de las opciones resaltadas */
+.multiselect__option--highlight {
+    background: #1b1b1b; /* Color personalizado */
+    color: #fff; /* Color del texto */
+}
+
+.multiselect__option--highlight::after {
+    background: #1b1b1b;
+  }
+  
+  /* Cambia el color del borde de la caja de selección */
+.multiselect__current {
+    border-color: yellow; /* Color personalizado */
+}
+  
+  /* Cambia el color del placeholder */
+.multiselect__placeholder {
+    color: rgb(156 163 175 / 0.7); /* Color personalizado */
+}
+  
+
+ 
