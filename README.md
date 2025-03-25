@@ -35,6 +35,8 @@ Front: http://localhost:5173/
 
 It's all, you can test it. Just you need docker on your machine.
 
+If you want to test the challenge online, I've made this link available: https://rafael-cano-dev.github.io/
+
 ![Texto alternativo](https://raw.githubusercontent.com/rafael-cano-challenge/jobsity-civicplus/main/preview.png)
 
 ## Run tests  
