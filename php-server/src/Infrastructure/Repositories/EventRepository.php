@@ -20,7 +20,7 @@ class EventRepository implements EventRepositoryInterface
     public function findAll(): array
     {
         try {
-            $response = $this->client->get("Events?%24skip=15");
+            $response = $this->client->get("Events");
             $contents = $response->getBody()->getContents();
 
             $data = json_decode($contents, true);
